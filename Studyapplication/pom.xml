@@ -73,6 +73,7 @@
 					<artifactId>frontend-maven-plugin</artifactId>
 					<version>1.6</version>
 					<configuration>
+						<workingDirectory>frontend</workingDirectory>
 						<installDirectory>target</installDirectory>
 					</configuration>
 					<executions>
@@ -103,6 +104,24 @@
 							<configuration>
 								<arguments>run build</arguments>
 							</configuration>
+						</execution>
+					</executions>
+				</plugin>
+				<plugin>
+					<artifactId>maven-antrun-plugin</artifactId>
+					<executions>
+						<execution>
+							<phase>generate-resources</phase>
+							<configuration>
+								<target>
+									<copy todir="${project.build.directory}/classes/public">
+										<fileset dir="${project.basedir}/frontend/build" />
+									</copy>
+								</target>
+							</configuration>
+							<goals>
+								<goal>run</goal>
+							</goals>
 						</execution>
 					</executions>
 				</plugin>
