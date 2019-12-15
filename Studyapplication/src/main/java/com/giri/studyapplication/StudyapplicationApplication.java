@@ -9,7 +9,6 @@ import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Import;
 import org.springframework.web.servlet.config.annotation.CorsRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
-
 import com.giri.studyapplication.repositoryCfg.RepositoryCfg;
 import com.giri.studyapplication.security.cfg.SpringSecurityCfgBasic;
 
